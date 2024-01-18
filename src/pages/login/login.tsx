@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 import { app } from "../../firebase/firebase";
 import Button from "../../components/button/button";
 import { useNavigate } from "react-router-dom";
-import miniSolar from "../../assets/3d-illus-innov.jpg"
 
 function Login() {
     const [email, setEmail] = useState("")
@@ -108,9 +107,7 @@ function Login() {
                     <button className="w-full p-[6px] rounded bg-purple hover:bg-fuchsia-800 text-white mt-8" onClick={() => signup()}>Login</button>
 
                 </div>
-                
-                <div style={{ backgroundImage: `url("${miniSolar}")` }} className="bg-cover bg-center backdrop-blur-sm p-4 h-[500px] flex-1 rounded-lg bg-gray-200/[0.09] md:block hidden">
-                </div>
+            
                 
             </div>
     )
