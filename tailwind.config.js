@@ -8,9 +8,9 @@ export default {
   theme: {
     extend: {
       colors: {
-        'purple': '#5938DD',
-        'green': '#18DD96',
-        'black': '#101016',
+        'purple': '#128C7E',
+        'green': '#25D366',
+        'black': '#101610',
       },
       animation: {
         'zoom-in': 'zoom 0.7s ease-in-out'

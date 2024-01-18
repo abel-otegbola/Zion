@@ -15,14 +15,12 @@
 
 
 <div align="center">
-  
-![Rectangle 13](https://github.com/abel-otegbola/Ennovate/assets/59369762/5abf82ff-29d0-42ad-ac79-800d362371f9)
 
 
-<h3 align="center">Ennovate</h3>
+<h3 align="center">ZION</h3>
 
   <p align="center">
-    Renewable energy awareness website. Showcasing household and simple innovative projects that use renewable energy sources and can be made with little cost
+    Online library and Task manager for organization.
     <br />
     <a href="https://github.com/abel-otegbola/Ennovate"><strong>Explore the docs »</strong></a>
     <br />
@@ -67,7 +65,6 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-![Home (3)~2](https://github.com/abel-otegbola/Ennovate/assets/59369762/02573ad3-29eb-43d9-b768-e085dc5833f9)
 
 
 
@@ -93,7 +90,7 @@ To get a local copy up and running follow these simple example steps.
 
 2. Clone the repo
    ```sh
-   git clone https://github.com/abel-otegbola/Ennovate.git
+   git clone https://github.com/abel-otegbola/Zion.git
    ```
 3. Install NPM packages
    ```sh
@@ -145,7 +142,7 @@ Don't forget to give the project a star! Thanks again!
 
 Your Name - [@twitter_handle](https://twitter.com/Abel_Otegbola) - abel15655@gmail.com
 
-Project Link: [https://github.com/abel-otegbola/EnQuest](https://github.com/abel-otegbola/Ennovate)
+Project Link: [https://github.com/abel-otegbola/EnQuest](https://github.com/abel-otegbola/Zion)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
