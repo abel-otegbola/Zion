@@ -1,52 +1,65 @@
-import ProjectGrid from "../../components/projectGrid/projectGrid";
-import { useEffect, useState } from "react";
-import { database } from "../../firebase/firebase";
-import { onValue, ref } from "firebase/database";
-import Skeleton from "../../components/projectGrid/projectSkeleton";
+// import { useEffect, useState } from "react";
+// import { database } from "../../firebase/firebase";
+// import { onValue, ref } from "firebase/database";
+import { FiBook, FiDatabase, FiFile, FiList } from "react-icons/fi";
+import Searchbar from "../../components/searchbar/searchbar";
 
 
 function Home()  {
-    const [data, setData] = useState<any>([])
-    const [loading, setLoading] = useState(false)
+    // const [data, setData] = useState<any>([])
+    // const [loading, setLoading] = useState(false)
 
-    useEffect(() => {
-        setLoading(true)
-        const projectsRef = ref(database, 'projects/');
-        let arr: any[] = []
-        onValue(projectsRef, (snapshot) => {
-            const data: any = snapshot.val();
-            Object.keys(data).map((key: any) => {
-                arr.push({id: key, data: data[key]})
-            })
-            setData(arr)
-            setLoading(false)
-        });
-    }, [])
+    // useEffect(() => {
+    //     setLoading(true)
+    //     const projectsRef = ref(database, 'projects/');
+    //     let arr: any[] = []
+    //     onValue(projectsRef, (snapshot) => {
+    //         const data: any = snapshot.val();
+    //         Object.keys(data).map((key: any) => {
+    //             arr.push({id: key, data: data[key]})
+    //         })
+    //         setData(arr)
+    //         setLoading(false)
+    //     });
+    // }, [])
 
     return (
         <main>
             <header className="md:px-[8%] p-[5%] py-[60px] relative bg-gradient-to-br from-white dark:from-black via-white dark:via-black to-purple/[0.05]">
             
                 <div className="m-auto flex flex-col md:items-center md:text-center md:w-[45%] w-full">
-                    <p className="text-purple p-1 px-4 md:rounded-full w-fit rounded bg-purple/[0.1] animate-zoom-in">All resources in one place</p>
+                    <p className="text-purple p-1 px-4 rounded-full w-fit rounded bg-purple/[0.1] animate-zoom-in">All resources in one place</p>
                     <h1 className="py-3 md:text-[40px] font-bold md:leading-[45px] leading-[40px] text-[35px] animate-zoom-in">ZION LIBRARY</h1>
+                    <Searchbar />
                     
                 </div>
             
                 <div className="grid lg:grid-cols-4 grid-cols-2 py-[60px] gap-4 overflow-hidden">
                     {
-                        ["", "", "", ""].map((img, i:number) => (
-                            <div key={i} style={{ backgroundImage: `url("${img}")` }} className="flex bg-cover bg-center animate-zoom-in items-center justify-center md:h-[250px] h-[200px] w-full rounded-[10px] border border-gray-500/[0.1] bg-gray-200 dark:bg-gray-300/[0.07]">
-                                
-                            </div>
+                        [
+                            {id: 0, text: "notes", to: "notes", icon: <FiFile/>, subText: "20 items"},
+                            {id: 0, text: "snippets", to: "snippets", icon: <FiList />, subText: "100+ items"},
+                            {id: 0, text: "Academic Books", to: "books?query=academics", icon: <FiDatabase />, subText: "200 items"},
+                            {id: 0, text: "Christian Books", to: "books?query=christian", icon: <FiBook />, subText: "10 new items"},
+                        ].map((category) => (
+                            <a href={category.to} key={category.id} className="flex flex-col justify-between pb-3 p-5 bg-cover bg-center animate-zoom-in md:h-[250px] h-[200px] w-full rounded-[10px] border border-gray-500/[0.1] bg-gray-200 dark:bg-gray-300/[0.07]">
+                                <p className="text-purple text-[25px] p-2 rounded bg-gray-200/[0.08] w-fit">{category.icon}</p>
+                                <div>
+                                    <p className="uppercase font-semibold">{category.text}</p>
+                                    <p className="opacity-[0.6]">{category.subText}</p>
+                                </div>
+                            </a>
                         ))
                     }
                 </div>
             </header>
 
             <section className="py-[70px] dark:bg-gray-100/[0.02] bg-gray-300/[0.2] md:px-[9%] px-[3%]">
+                    <p className="text-purple p-1 px-4 rounded-full w-fit rounded bg-purple/[0.1] animate-zoom-in">Topic of the week</p>
+                    <h1 className="pt-3 text-[25px] font-bold md:leading-[45px] leading-[40px] animate-zoom-in uppercase">Service to God</h1>
+                    <p>Text: 1 corinthians 6:20</p>
 
-                <div className="w-full grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 gap-4 py-2 pb-8 my-4 overflow-x-auto scrollbar">
+                {/* <div className="w-full grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 gap-4 py-2 pb-8 my-4 overflow-x-auto scrollbar">
                     {
                         !loading ?
                         data?.map((project:any) => {
@@ -57,7 +70,8 @@ function Home()  {
                         :
                         <Skeleton numbers={[0, 1, 2, 3]} />
                     }
-                </div>
+                </div> */}
+
             </section>
 
         </main>
