@@ -34,7 +34,7 @@ function Topbar() {
                 </a>
 
                 {/* Menu links for desktop */}
-                <ul className="flex gap-2 items-center md:justify-start justify-between md:p-0 px-[3%] pt-2 border md:border-none border-gray-300/[0.1] md:static fixed bottom-0 left-0 z-5 bg-white dark:bg-black md:w-auto w-full">
+                <ul className="flex gap-2 items-center md:justify-start justify-between md:p-0 px-[3%] pt-2 border md:border-none border-transparent border-t-gray-300/[0.5] md:static fixed bottom-0 left-0 z-5 bg-white dark:bg-black md:w-auto w-full">
                     <li><a href="/notes" className={`flex md:gap-2 items-center px-4 py-1 md:text-[14px] text-[9px] md:flex-row flex-col rounded-full ${pathname === "/notes" ? "md:bg-purple/[0.1]" : "hover:md:bg-purple/[0.1]"}`}><FiList className="text-[16px]"/> Notes</a></li>
                     <li><a href="/books" className={`flex md:gap-2 items-center px-4 py-1 md:text-[14px] text-[9px] md:flex-row flex-col rounded-full ${pathname === "/books" ? "md:bg-purple/[0.1]" : "hover:md:bg-purple/[0.1]"}`}><FiBook className="text-[16px]"/> Books</a></li>
                     <li><a href="/quest" className={`flex md:gap-2 items-center px-4 py-1 md:text-[14px] text-[9px] md:flex-row flex-col rounded-full ${pathname === "/quest" ? "md:bg-[#5938DD]/[0.1]" : "hover:md:bg-purple/[0.1]"}`}><FaQuestion className="text-[16px]"/> Quest</a></li>
@@ -49,7 +49,7 @@ function Topbar() {
                  
                 <a
                         href="/settings"
-                        className="flex items-center justify-center w-[30px] h-[30px] py-0 rounded-full bg-slate-300/[0.1] focus:outline focus:outline-offset-2 outline-purple/[0.3] hover:text-green"
+                        className="flex items-center justify-center w-[30px] h-[30px] py-0 rounded-full bg-slate-200 dark:bg-slate-300/[0.1] focus:outline focus:outline-offset-2 outline-purple/[0.3] hover:text-green"
                         role="menuitem" 
                     >
                         <FiSettings />
