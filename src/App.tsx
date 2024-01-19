@@ -14,6 +14,7 @@ import PrivacyPolicy from './pages/privacypolicy/privacypolicy'
 import Explore from './pages/explore/explore'
 import Search from './pages/search/search'
 import ErrorPage from './pages/404/404'
+import Notes from './pages/notes/notes'
 
 function App() {
   useEffect(() => {
@@ -41,6 +42,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/settings' element={<Settings />} />
+            <Route path='/notes' element={<Notes />} />
             <Route path='/login' element={<Login />} />
             <Route path='/project' element={<Project />} />
             <Route path='/explore' element={<Explore />} />
