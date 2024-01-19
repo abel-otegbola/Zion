@@ -8,7 +8,7 @@ export default function Notes() {
         <div className="md:px-[9%] px-[3%] py-[60px] min-h-[90vh]">
             <div className="flex items-center justify-between">
                 <div>
-                    <button className="flex items-center gap-2 p-2 px-6 rounded bg-purple/[0.1] border border-purple"><span>Create new</span> <FiPlus /> </button>
+                    <a href="/note?query=new" className="flex items-center gap-2 p-2 px-6 rounded bg-purple/[0.1] border border-purple"><span>Create new</span> <FiPlus /> </a>
                 </div>
                 <div className="flex">
                     <button className={`p-2 text-[16px] ${display === "List" ? "bg-purple text-white" : "bg-gray-200/[0.08]"}`} onClick={() => setDisplay("List")}><FiList /></button>
@@ -24,9 +24,9 @@ export default function Notes() {
                     {id: 0, heading: "Jesus the Good Shepherd", text: "John 10: 11, The type of relationahip we have with jesus is one that involves total dependence on Jesus. A sheep as expressed here always look to the shepherd for guideance, protection, providion and every other things"},
                 ]
                 .map((category) => (
-                    <a href={"/note?query=" + category.heading} key={category.id} className={`pb-3 p-5 animate-zoom-in ${ display === "List" ? "" : "h-[140px]"} rounded-[10px] border border-gray-500/[0.3] dark:bg-gray-300/[0.07]`}>
+                    <a href={"/note?query=" + category.heading} key={category.id} className={`pb-3 p-5 animate-zoom-in transition-all ${ display === "List" ? "" : "h-[150px]"} rounded-[10px] border border-gray-500/[0.3] dark:bg-gray-300/[0.07]`}>
                         <p className="uppercase font-semibold leading-[130%] mb-2 h-[35px] overflow-hidden">{category.heading}</p>
-                        <p className="opacity-[0.6] text-[10px] leading-[130%] h-[50px] overflow-hidden">{category.text}</p>
+                        <p className="opacity-[0.6] text-[10px] leading-[130%] h-[50px] overflow-hidde">{category.text}</p>
                     </a>
                 ))
             }
@@ -41,7 +41,7 @@ export default function Notes() {
                     {id: 2, heading: "Question to peter", text: "3 times Jesus asked peter 'Lovest thou me?', then, 'if you do, feed my lamb' "},
                 ]
                 .map((category) => (
-                    <a href={"/note?query=" + category.heading} key={category.id} className={`pb-3 p-5 animate-zoom-in ${ display === "List" ? "" : "h-[140px]"} rounded-[10px] border border-gray-500/[0.3] dark:bg-gray-300/[0.07]`}>
+                    <a href={"/note?query=" + category.heading} key={category.id} className={`pb-3 p-5 animate-zoom-in ${ display === "List" ? "" : "h-[150px]"} rounded-[10px] border border-gray-500/[0.3] dark:bg-gray-300/[0.07]`}>
                         <p className="uppercase font-semibold leading-[130%] mb-2 h-[35px] overflow-hidden">{category.heading}</p>
                         <p className="opacity-[0.6] text-[10px] leading-[130%] h-[50px] overflow-hidden">{category.text}</p>
                     </a>
