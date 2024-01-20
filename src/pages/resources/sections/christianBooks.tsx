@@ -42,9 +42,17 @@ export default function ChristianBooks({ christianBooks, display }: any) {
                                 <p className="uppercase font-semibold leading-[130%] mb-2 h-[35px] overflow-hidden">{book.title}</p>
                                 <p className="opacity-[0.6] text-[12px] leading-[130%] h-[30px] overflow-hidden">{book.author} - {book.type}</p>
                                 
-                                <td className="flex items-center justify-end gap-2">
-                                    <button className="p-[2px] md:px-4 px-2 rounded text-[10px] bg-purple/[0.1] border border-gray-100/[0.09] px-3 bg-purple">Download</button>
-                                    <button className="p-[2px] md:px-4 px-2 rounded text-[10px] bg-purple/[0.1] border border-gray-100/[0.09] px-3 bg-purple">Request</button>
+                                <td className="flex items-center gap-2">
+                                    { 
+                                        book.type.indexOf("s") !== -1 ?
+                                        <button className="p-[1px] md:px-4 rounded text-[10px] bg-purple/[0.1] border border-gray-100/[0.09] px-3 bg-purple">Download</button>
+                                        : ""
+                                    }
+                                    {
+                                        book.type.indexOf("h") !== -1 ?
+                                        <button className="p-[1px] md:px-4 rounded text-[10px] bg-purple/[0.1] border border-gray-100/[0.09] px-3 bg-purple">Request</button>
+                                        : ""
+                                    }
                                 </td>
                             </a>
                         ))
