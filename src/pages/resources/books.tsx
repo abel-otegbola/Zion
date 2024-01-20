@@ -2,7 +2,7 @@ import { useState } from "react";
 import { FiDatabase, FiGrid, FiHome, FiList, FiMessageSquare, FiSettings } from "react-icons/fi";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { TbCalculator } from "react-icons/tb";
-import AllBooks, { BooksStack } from './appliances';
+import AllBooks, { BooksStack } from './BooksData';
 import { useLocation } from "react-router-dom";
 import ChristianBooks from "./sections/christianBooks";
 import Featured from "./sections/featured";
@@ -19,9 +19,7 @@ export default function Books() {
     const [active, setActive] = useState(hash.replace("#", "")) 
     const [open, setOpen] = useState(false)
     const [display, setDisplay] = useState("Grid")
-    const { christianBooks }: BooksStack = AllBooks;
-
-
+    const { christianBooks, faculties }: BooksStack = AllBooks;
 
     const generalLinks: Links = [
         { id: 0, label: "Featured", icon: <FiDatabase />, link: "#Featured" },
@@ -60,7 +58,7 @@ export default function Books() {
                     }
                 </div>
 
-                <div className="md:p-[3%] md:w-[75%] w-full py-3 ">
+                <div className="md:p-[3%] md:w-[75%] w-full py-[40px] ">
                     {
                         active === "Featured" ?
                             <Featured />
@@ -69,7 +67,7 @@ export default function Books() {
                             <ChristianBooks christianBooks={christianBooks} display={display} />
                         : 
                         active === "Academics" ?
-                            <AcademicBooks />
+                            <AcademicBooks data={faculties} display={display} />
                         : ""
                     }
                 </div>
