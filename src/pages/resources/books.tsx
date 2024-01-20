@@ -16,16 +16,16 @@ interface Links extends Array<Link>{}
 
 export default function Books() {
     const { hash } = useLocation()
-    const [active, setActive] = useState(hash.replace("#", "")) 
+    const [active, setActive] = useState(hash.replace("#", "") || "featured") 
     const [open, setOpen] = useState(false)
     const [display, setDisplay] = useState("Grid")
     const { christianBooks, faculties }: BooksStack = AllBooks;
 
     const generalLinks: Links = [
-        { id: 0, label: "Featured", icon: <FiDatabase />, link: "#Featured" },
-        { id: 1, label: "Christian", icon: <FiSettings />, link: "#Christian" },
-        { id: 2, label: "Academics", icon: <TbCalculator />, link: "#Academics" },
-        { id: 3, label: "Sermons", icon: <FiMessageSquare />, link: "#Sermons" }
+        { id: 0, label: "Featured", icon: <FiDatabase />, link: "#featured" },
+        { id: 1, label: "Christian", icon: <FiSettings />, link: "#christian" },
+        { id: 2, label: "Academics", icon: <TbCalculator />, link: "#academics" },
+        { id: 3, label: "Sermons", icon: <FiMessageSquare />, link: "#sermons" }
     ]
 
     return (
@@ -49,7 +49,7 @@ export default function Books() {
                     {
                         generalLinks.map(link => {
                                 return (
-                                <a key={link.id} href={link.link} onClick={() => {setActive(link.label); setOpen(false) }} className={`flex items-center justify-between p-1 my-[2px] px-4 hover:bg-purple hover:text-white rounded ${active === link.label ? "bg-purple text-white" : ""}`}>
+                                <a key={link.id} href={link.link} onClick={() => {setActive(link.label.toLowerCase()); setOpen(false) }} className={`flex items-center justify-between p-1 my-[2px] px-4 hover:bg-purple hover:text-white rounded ${active === link.label.toLowerCase() ? "bg-purple text-white" : ""}`}>
                                     <span className="w-[30px] text-lg">{link.icon}</span>
                                     <span className="flex-1 p-2 break-normal">{link.label}</span>
                                 </a>
@@ -60,15 +60,13 @@ export default function Books() {
 
                 <div className="md:p-[3%] md:w-[75%] w-full py-[40px] ">
                     {
-                        active === "Featured" ?
-                            <Featured />
-                        :
-                        active === "Christian" ? 
+                        active === "christian" ? 
                             <ChristianBooks christianBooks={christianBooks} display={display} />
                         : 
-                        active === "Academics" ?
+                        active === "academics" ?
                             <AcademicBooks data={faculties} display={display} />
-                        : ""
+                        :
+                            <Featured />
                     }
                 </div>
             </div>

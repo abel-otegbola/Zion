@@ -1,33 +1,21 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { FaFolder, FaTimes} from "react-icons/fa"
 
 export default function AcademicBooks({ data, display }: any) {
-    const [part, setPart] = useState("Part 1")
     const [faculty, setFaculty] = useState("Technology")
+    const [department, setDepartment] = useState("Chemical Engineering")
     const [open, setOpen] = useState(false)
-
-    useEffect(() => {
-        console.log(part)
-    }, [])
 
     return (
         <div className="relative overflow-hidden">
             <h1 className="font-semibold uppercase text-[15px] text-purple mb-2">Academic Books</h1>
             <p className="leading-[130%] text-[12px]">Welcome to the academic books repository. We have both softcopy<span className="text-purple">(s)</span> for download as well as hardcopies<span className="text-purple">(h)</span>.</p>
 
-            <div className="flex items-center gap-2 p-4 my-4 bg-gray-400/[0.07] border border-gray-600/[0.2] rounded">
-                <div>
-                    <p className="opacity-[0.7] text-[12px]">Choose part:</p>
-                    <select className="p-[11px] md:px-4 px-2 rounded bg-purple/[0.1] border border-gray-100/[0.09] px-3 focus:outline outline-purple/[0.3] outline-offset-1" onChange={(e) => setPart(e.target.value)}>
-                        <option className="bg-black text-white">Part 1</option>
-                        <option className="bg-black text-white">Part 2</option>
-                        <option className="bg-black text-white">Part 3</option>
-                    </select>
-                </div>
+            <div className="flex items-center gap-2 p-4 my-4 border border-gray-600/[0.2] rounded">
                 
                 <div>
                     <p className="opacity-[0.7] text-[12px]">Choose faculty:</p>
-                    <select className="p-[11px] md:px-4 px-2 rounded bg-purple/[0.1] border border-gray-100/[0.09] px-3 focus:outline outline-purple/[0.3] outline-offset-1" onChange={(e) => setFaculty(e.target.value)}>
+                    <select className="p-[11px] md:px-4 px-2 rounded bg-transparent border border-gray-100 dark:border-gray-100/[0.09] px-3 focus:outline outline-purple/[0.3] outline-offset-1" onChange={(e) => setFaculty(e.target.value)}>
                         <option className="bg-black text-white">Technology</option>
                         <option className="bg-black text-white">Science</option>
                         <option className="bg-black text-white">Clinical Sciences</option>
@@ -48,9 +36,9 @@ export default function AcademicBooks({ data, display }: any) {
                    {
                         data.filter((item: any) => item.name === faculty).map((item: any) => item.departments.map((department: any, i: number) => (
                             
-                            <a key={i} href={"#" + department} onClick={() => setOpen(true)} className={`${display === "List" ? "flex items-center gap-4 p-2 px-4": "pt-3 p-5"} w-full animate-zoom-in rounded-[10px] border border-gray-500/[0.3] dark:bg-gray-300/[0.04]`}>
-                                <FaFolder className="text-[80px] opacity-[0.5]" />
-                                <p className="leading-[130%] text-[12px] mt-4" >{department}</p>
+                            <a key={i} href={"#" + department} onClick={() => {setOpen(true); setDepartment(department)}} className={`transition-all duration-700 ${display === "List" ? "flex items-center gap-4 p-2 px-4 rounded": "pt-3 p-5 rounded-[10px]"} w-full animate-zoom-in  border border-gray-500/[0.3] dark:bg-gray-300/[0.04]`}>
+                                <FaFolder className={`opacity-[0.2] ${display === "List" ? "text-[30px]" : "text-[80px] mb-4"}`} />
+                                <p className="leading-[130%] text-[12px]" >{department}</p>
                             </a>
                         )))
                     } 
@@ -60,7 +48,7 @@ export default function AcademicBooks({ data, display }: any) {
 
             <div className={`absolute top-0 left-0 w-full h-full bg-white dark:bg-black transition-all duration-500 ${open ? "left-0" : "left-[110%]"}`}>
                 <div className="flex justify-between items-center">
-                    <h1>{faculty}</h1>
+                    <h1>{department}</h1>
                     <FaTimes onClick={() => setOpen(false)} />
                 </div>
             </div>

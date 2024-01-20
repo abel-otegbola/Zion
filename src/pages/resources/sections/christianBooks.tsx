@@ -1,65 +1,47 @@
+import { useState } from "react";
+import { FaTimes } from "react-icons/fa";
+
 export default function ChristianBooks({ christianBooks, display }: any) {
+    const [open, setOpen] = useState(false)
+    const [active, setActive] = useState("")
+
     return (
-        <div>
+        <div className="relative overflow-hidden">
             <h1 className="font-semibold uppercase text-[15px] text-purple mb-2">Christian Books</h1>
             <p className="leading-[130%] text-[12px]">Welcome to the christian books repository. We have both softcopy<span className="text-purple">(s)</span> for download as well as hardcopies<span className="text-purple">(h)</span>.</p>
 
-            {
-                display === "List" ?
-                <div className="w-full min-h-[70vh] overflow-x-auto">
-                    <table className="w-full my-6 min-w-[600px]">
-                        <thead className="">
-                            <tr className="text-left border border-transparent border-b-gray-500/[0.4]">
-                                <th className="p-2"></th>
-                                <th className="p-2">Title</th>
-                                <th className="p-2">Author</th>
-                                <th className="p-2">type</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        {
-                            christianBooks.map((item: any, i: number) => (
-                                <tr className=" border border-transparent border-b-gray-400/[0.08]">
-                                    <td className="p-2">{i + 1}.</td>
-                                    <td className="p-2">{item.title}</td>
-                                    <td className="p-2">{item.author}</td>
-                                    <td className="p-2">{item.type}</td>
-                                    <td className="flex items-center justify-end gap-2 p-2">
-                                        <button className="p-[2px] md:px-4 px-2 rounded text-[10px] bg-purple/[0.1] border border-gray-100/[0.09] px-3 bg-purple">Download</button>
-                                        <button className="p-[2px] md:px-4 px-2 rounded text-[10px] bg-purple/[0.1] border border-gray-100/[0.09] px-3 bg-purple">Request</button>
-                                    </td>
-                                </tr>
-                            ))
-                        }
-                        </tbody>
-                    </table>
-                </div>
-                :
-                <div className="grid lg:grid-cols-3 grid-cols-2 gap-4 my-8">
-                    {
-                    christianBooks.map((book: any, i: number) => (
-                            <a href={"/note?query=" + book.title} key={i} className={`pb-3 p-5 animate-zoom-in h-[150px] rounded-[10px] border border-gray-500/[0.3] dark:bg-gray-300/[0.07]`}>
-                                <p className="uppercase font-semibold leading-[130%] mb-2 h-[35px] overflow-hidden">{book.title}</p>
-                                <p className="opacity-[0.6] text-[12px] leading-[130%] h-[30px] overflow-hidden">{book.author}</p>
-                                
-                                <td className="flex items-center gap-2">
-                                    { 
-                                        book.type.indexOf("s") !== -1 ?
-                                        <button className="p-[1px] md:px-4 rounded text-[10px] bg-purple/[0.1] border border-gray-100/[0.09] px-3 bg-purple">Softcopy</button>
-                                        : ""
-                                    }
-                                    {
-                                        book.type.indexOf("h") !== -1 ?
-                                        <button className="p-[1px] md:px-4 rounded text-[10px] bg-purple/[0.1] border border-gray-100/[0.09] px-3 bg-purple">Hardcopy</button>
-                                        : ""
-                                    }
-                                </td>
-                            </a>
-                        ))
-                    }
-                </div>
-            }
+            <div className={`grid gap-4 my-8 ${display === "List" ? "" : "lg:grid-cols-3 grid-cols-2 "}`}>
+                {
+                christianBooks.map((book: any, i: number) => (
+                        <a href={"#" + book.title} onClick={() => {setActive(book.title); setOpen(true)}} key={i} className={`flex gap-4 animate-zoom-in border border-gray-500/[0.3] dark:bg-gray-300/[0.07] ${display === "List" ? "items-center justify-between rounded p-2 px-4" : "flex-col justify-between rounded-[10px] p-5 "}`}>
+                            <div className="flex flex-col gap-2">
+                                <p className={`font-semibold leading-[130%] overflow-hidden ${display === "List" ? "" : ""}`}>{book.title}</p>
+                                <p className="opacity-[0.6] text-[12px] leading-[130%] overflow-hidden">{book.author}</p>
+                            </div>
+                            
+                            <div className="flex items-center gap-2">
+                                { 
+                                    book.type.indexOf("s") !== -1 ?
+                                    <button className="p-[1px] md:px-4 rounded text-[10px] bg-purple/[0.1] border border-gray-100/[0.09] px-3 bg-purple">Softcopy</button>
+                                    : ""
+                                }
+                                {
+                                    book.type.indexOf("h") !== -1 ?
+                                    <button className="p-[1px] md:px-4 rounded text-[10px] bg-purple/[0.1] border border-gray-100/[0.09] px-3 bg-purple">Hardcopy</button>
+                                    : ""
+                                }
+                            </div>
+                        </a>
+                    ))
+                }
+            </div>
 
+            <div className={`absolute top-0 left-0 w-full h-full bg-white dark:bg-black transition-all duration-500 ${open ? "left-0" : "left-[110%]"}`}>
+                <div className="flex justify-between items-center">
+                    <h1>{active}</h1>
+                    <FaTimes onClick={() => setOpen(false)} />
+                </div>
+            </div>
             
         </div>
     )
