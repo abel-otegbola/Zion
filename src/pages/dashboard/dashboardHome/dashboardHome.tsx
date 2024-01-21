@@ -1,71 +1,55 @@
-import { useContext, useEffect, useState } from "react"
-import Button from "../../../components/button/button"
-import { database } from "../../../firebase/firebase"
-import { onValue, ref } from "firebase/database"
+import { useContext, useState } from "react"
 import { AuthContext } from "../../../customHooks/useAuth"
-import ProjectGrid from "../../../components/projectGrid/projectGrid"
-import Skeleton from "../../../components/projectGrid/projectSkeleton"
+import { Links } from "../../resources/books";
+import { TbBook, TbDashboard, TbUsers } from "react-icons/tb";
+import { FiHome } from "react-icons/fi";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 function DashboardHome() {
-    const [projects, setProjects] = useState<any>([])
     const { user } = useContext(AuthContext);
-    const [loading, setLoading] = useState(false)
+    const [active, setActive] = useState("dashboard") 
+    const [open, setOpen] = useState(false)
 
-    useEffect(() => {
-        setLoading(true)
-        const projectsRef = ref(database, 'projects/');
-        let arr: any[] = []
-        onValue(projectsRef, (snapshot) => {
-            const data: any = snapshot.val();
-            Object.keys(data).map((key: any) => {
-                arr.push({id: key, data: data[key]})
-            })
-            setProjects(arr)
-            setLoading(false)
-        });
-    }, [])
+    const generalLinks: Links = [
+            { id: 0, label: "Dashboard", icon: <TbDashboard />, link: "#dashboard" },
+            { id: 1, label: "Books", icon: <TbBook />, link: "#book" },
+            { id: 2, label: "Users", icon: <TbUsers />, link: "#users" },
+        ]
 
     return (
-        <div className="py-[40px] w-full">
-            <h1 className="uppercase font-semibold">Welcome: {user?.displayName || user?.email}</h1>
-
-            <h2 className="mt-8 border border-transparent border-b-gray-200 dark:border-b-gray-100/[0.1] text-[14px] text-green">MY PROJECTS</h2>
-            <div className="w-full grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 gap-4 py-2 my-4 scrollbar">
-                {
-                    !loading ?
-                    projects?.filter((item: any) => item.data.user.email === user?.email).map((project: any) => {
-                        return (
-                            <ProjectGrid key={project.id} id={project.id} project={project.data} />
-                        )
-                    })
-                    :
-                    <Skeleton numbers={[0]} />
-                }
-                <div className="flex flex-col items-center justify-center w-full min-h-[300px] rounded-[10px] border border-gray-700/[0.1] bg-gray-300/[0.07]">
-                    {
-                        projects.filter((item: any) => item.data.user.email === user?.email).length === 0 ? <p>You haven't created any project</p> : ""
-                    }
-                    <div className="pt-4">
-                        <Button text={"Create"} link={"/dashboard/create"} />
-                    </div>
+        <>
+            <div className="py-4 md:px-[9%] px-[3%] border border-transparent border-b-gray-200 dark:border-b-slate-100/[0.09] ">
+                <div className="flex items-center gap-2 text-[12px] ">
+                    <button className="md:hidden p-2 mr-2 text-lg" onClick={() => setOpen(!open)}>{open ? <FaTimes /> : <FaBars />}</button>
+                    <a href="/" className="text-lg"><FiHome /></a> | <a href="/dashboard" className="opacity-[0.6]"> Account</a> | <span className="opacity-[0.6]"> {active}</span>
                 </div>
             </div>
-            <h2 className="mt-8 border border-transparent border-b-gray-200 dark:border-b-gray-100/[0.1] text-[14px] text-green">FEATURED</h2>
 
-            <div className="w-full min-h-[250px] grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 gap-4 py-2 my-4 overflow-x-auto scrollbar">
-                {
-                    !loading ?
-                    projects.map((project: any) => {
-                        return (
-                            <ProjectGrid key={project.id} id={project.id} project={project.data} />
-                        )
-                    })
-                    :
-                    <Skeleton numbers={[0, 1, 2, 3]} />
-                }
+            <div className="w-full md:px-[9%] px-[3%]">
+                <div className={`md:w-[25%] w-[240px] h-screen md:sticky absolute top-[0px] md:pl-0 p-4 left-0 bg-white dark:bg-black border border-transparent border-r-gray-200 dark:border-r-slate-100/[0.09] overflow-hidden z-10 transition-all duration-700 ${open ? "translate-x-[0]": "md:translate-x-[0] translate-x-[-130%]"}`}>  
+                    {
+                        generalLinks.map(link => {
+                                return (
+                                <a key={link.id} href={"/dashboard" + link.link} onClick={() => {setActive(link.label.toLowerCase()); setOpen(false) }} className={`flex items-center justify-between p-1 my-[2px] px-4 hover:bg-green hover:text-white rounded ${active.toLowerCase() === link.label.toLowerCase() ? "bg-green text-white" : ""}`}>
+                                    <span className="w-[30px] text-lg">{link.icon}</span>
+                                    <span className="flex-1 p-2 break-normal">{link.label}</span>
+                                </a>
+                                )
+                        })
+                    }
+                </div>
+        
+                <h1 className="uppercase font-semibold">Welcome: {user?.displayName || user?.email}</h1>
+
+                <h2 className="mt-8 border border-transparent border-b-gray-200 dark:border-b-gray-100/[0.1] text-[14px] text-green">MY PROJECTS</h2>
+                <div className="w-full grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 gap-4 py-2 my-4 scrollbar">
+                    
+                </div>
+                <h2 className="mt-8 border border-transparent border-b-gray-200 dark:border-b-gray-100/[0.1] text-[14px] text-green">FEATURED</h2>
+
+
             </div>
-
-        </div>
+        </>
     )
 }
 

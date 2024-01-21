@@ -14,7 +14,7 @@ function Dashboard() {
     else {
         return (
         <>
-            <div className="md:px-[9%] px-[3%]">
+            <div className="">
                 <Routes>
                     <Route path="/" element={<Navigate to={"/dashboard/home"} />} />
                     <Route path="/home" element={<DashboardHome />} />
