@@ -13,9 +13,9 @@ function Footer() {
                 </ul>
                 <ul className="w-full">
                     <h2 className="py-2 font-semibold uppercase text-green">Questions</h2>
-                    <li className="flex w-full"><a href="/FAQs" className="py-[5px] w-full hover:text-darkgreen">What is discernment?</a></li>
-                    <li className="flex w-full"><a href="/terms&conditions" className="py-[5px] w-full hover:text-darkgreen">How do I grow as a christian?</a></li>
-                    <li className="flex w-full"><a href="/privacypolicy" className="py-[5px] w-full hover:text-darkgreen">Service to God, what does it mean?</a></li>
+                    <li className="flex w-full"><a href="/quest?q=What-is-disernment" className="py-[5px] w-full hover:text-darkgreen">What is discernment?</a></li>
+                    <li className="flex w-full"><a href="/quest?q=How-do-I-grow-as-a-christian" className="py-[5px] w-full hover:text-darkgreen">How do I grow as a christian?</a></li>
+                    <li className="flex w-full"><a href="/quest?q=What-does-it-mean-to-be-born-of-God" className="py-[5px] w-full hover:text-darkgreen">What does it mean to be born of God?</a></li>
                 </ul>
                 <ul className="w-full">
                     <h2 className="py-2 font-semibold uppercase text-green">Topics</h2>
