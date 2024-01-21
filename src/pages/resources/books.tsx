@@ -1,18 +1,18 @@
 import { useState } from "react";
-import { FiGrid, FiHome, FiList, FiMessageSquare, FiSettings } from "react-icons/fi";
+import { FiGrid, FiHome, FiList, FiMessageSquare } from "react-icons/fi";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { TbCalculator } from "react-icons/tb";
+import { TbBook2, TbCalculator, TbFileBroken } from "react-icons/tb";
 import AllBooks, { BooksStack } from './BooksData';
 import { useLocation } from "react-router-dom";
 import ChristianBooks from "./sections/christianBooks";
-import Featured from "./sections/featured";
 import AcademicBooks from "./sections/academicBooks";
+import Snippets from "./sections/snippets";
 
 
-interface Link {
+export interface Link {
     id: number; label: string; icon: any, link: string
 }
-interface Links extends Array<Link>{}
+export interface Links extends Array<Link>{}
 
 export default function Books() {
     const { hash } = useLocation()
@@ -22,9 +22,10 @@ export default function Books() {
     const { christianBooks, faculties }: BooksStack = AllBooks;
 
     const generalLinks: Links = [
-        { id: 0, label: "Academics", icon: <TbCalculator />, link: "#academics" },
-        { id: 1, label: "Christian", icon: <FiSettings />, link: "#christian" },
-        { id: 2, label: "Sermons", icon: <FiMessageSquare />, link: "#sermons" }
+        { id: 0, label: "Snippets", icon: <TbFileBroken />, link: "#snippets" },
+        { id: 1, label: "Academics", icon: <TbCalculator />, link: "#academics" },
+        { id: 2, label: "Christian", icon: <TbBook2 />, link: "#christian" },
+        { id: 3, label: "Sermons", icon: <FiMessageSquare />, link: "#sermons" }
     ]
 
     return (
@@ -65,7 +66,7 @@ export default function Books() {
                         active === "academics" ?
                             <AcademicBooks data={faculties} display={display} />
                         :
-                            <Featured />
+                            <Snippets />
                     }
                 </div>
             </div>

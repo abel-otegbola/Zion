@@ -15,7 +15,7 @@ export default function AcademicBooks({ data, display }: any) {
                 
                 <div>
                     <p className="opacity-[0.7] text-[12px]">Choose faculty:</p>
-                    <select className="p-[11px] md:px-4 px-2 rounded bg-transparent border border-gray-100 dark:border-gray-100/[0.09] px-3 focus:outline outline-green/[0.3] outline-offset-1" onChange={(e) => setFaculty(e.target.value)}>
+                    <select className="p-[11px] md:px-4 px-2 rounded bg-transparent border border-gray-300 dark:border-gray-100/[0.09] px-3 focus:outline outline-green/[0.3] outline-offset-1" onChange={(e) => setFaculty(e.target.value)}>
                         <option className="bg-black text-white">Technology</option>
                         <option className="bg-black text-white">Science</option>
                         <option className="bg-black text-white">Clinical Sciences</option>
