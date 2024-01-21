@@ -2,7 +2,7 @@ import { useState } from "react"
 import { FaChevronLeft } from "react-icons/fa"
 import { FiGrid, FiList, FiPlus } from "react-icons/fi"
 
-export default function Notes() {
+export default function Quest() {
     const [display, setDisplay] = useState("Grid")
     const [open, setOpen] = useState(false)
     const [selected, setSelected] = useState({ id: 0, heading: "", text: "" })
@@ -11,14 +11,14 @@ export default function Notes() {
         <div className="md:px-[9%] px-[3%] min-h-[90vh] relative overflow-hidden">
             <div className="flex items-center justify-between py-[40px]">
                 <div>
-                    <a href="#new" onClick={() => {setSelected({id: 0, heading: "", text: ""}); setOpen(true)}} className="flex items-center gap-2 p-2 px-6 rounded bg-purple/[0.1] border border-purple"><span>Create new</span> <FiPlus /> </a>
+                    <a href="#new" onClick={() => {setSelected({id: 0, heading: "", text: ""}); setOpen(true)}} className="flex items-center gap-2 p-2 px-6 rounded bg-purple/[0.1] border border-purple"><span>Ask new question</span> <FiPlus /> </a>
                 </div>
                 <div className="flex">
                     <button className={`p-2 text-[16px] ${display === "List" ? "bg-purple text-white" : "bg-gray-200/[0.08]"}`} onClick={() => setDisplay("List")}><FiList /></button>
                     <button className={`p-2 text-[16px] ${display === "Grid" ? "bg-purple text-white" : "bg-gray-200/[0.08]"}`} onClick={() => setDisplay("Grid")}><FiGrid /></button>
                 </div>
             </div>
-            <h1 className="pt-3 text-purple border border-transparent border-b-gray-500/[0.1] font-semibold md:leading-[45px] leading-[40px] animate-zoom-in">Pinned</h1>
+            <h1 className="pt-3 text-purple border border-transparent border-b-gray-500/[0.1] font-semibold md:leading-[45px] leading-[40px] animate-zoom-in">Newest</h1>
 
            
             <div className={`min-h-[160px] grid gap-4 py-4 ${display === "List" ? "" : "md:grid-cols-4 grid-cols-2"}`}>

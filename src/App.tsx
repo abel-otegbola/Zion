@@ -15,8 +15,8 @@ import Explore from './pages/explore/explore'
 import Search from './pages/search/search'
 import ErrorPage from './pages/404/404'
 import Notes from './pages/notes/notes'
-import Note from './pages/note/note'
 import Books from './pages/resources/books'
+import Quest from './pages/quest/quest'
 
 function App() {
   useEffect(() => {
@@ -45,7 +45,7 @@ function App() {
             <Route path='/' element={<Home />} />
             <Route path='/settings' element={<Settings />} />
             <Route path='/notes' element={<Notes />} />
-            <Route path='/note' element={<Note />} />
+            <Route path='/quest' element={<Quest />} />
             <Route path='/books' element={<Books />} />
             <Route path='/login' element={<Login />} />
             <Route path='/project' element={<Project />} />
