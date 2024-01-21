@@ -28,7 +28,7 @@ export default function ChristianBooks({ christianBooks, display }: any) {
                         <a href={"#" + book.title} onClick={() => {setActive(book.title); setOpen(true)}} key={i} className={`flex gap-4 animate-zoom-in border border-gray-500/[0.3] dark:bg-gray-300/[0.07] ${display === "List" ? "items-center justify-between rounded p-2 px-4" : "flex-col justify-end rounded-[10px] min-h-[130px] p-5 "}`}>
                             <div className="flex flex-col justify-end gap-2">
                                 <p className={`font-semibold leading-[140%] overflow-hidden ${display === "List" ? "" : ""}`}>{book.title}</p>
-                                <p className="opacity-[0.6] text-[12px] leading-[140%] overflow-hidden bg-green/[0.1] px-2 p-1 rounded w-fit">{book.author}</p>
+                                <p className="opacity-[0.6] text-[12px] leading-[140%] overflow-hidden">{book.author}</p>
                             </div>
                         </a>
                     ))
