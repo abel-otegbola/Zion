@@ -37,9 +37,9 @@ function Home()  {
                     {
                         [
                             {id: 0, text: "notes", to: "notes", icon: <FiFile/>, subText: "20 items"},
-                            {id: 0, text: "snippets", to: "snippets", icon: <FiList />, subText: "100+ items"},
-                            {id: 0, text: "Academic Books", to: "books#Academics", icon: <FiDatabase />, subText: "200 items"},
-                            {id: 0, text: "Christian Books", to: "books#Christian", icon: <FiBook />, subText: "10 new items"},
+                            {id: 0, text: "snippets", to: "books#snippets", icon: <FiList />, subText: "100+ items"},
+                            {id: 0, text: "Academic Books", to: "books#academics", icon: <FiDatabase />, subText: "200 items"},
+                            {id: 0, text: "Christian Books", to: "books#christian", icon: <FiBook />, subText: "10 new items"},
                         ].map((category) => (
                             <a href={category.to} key={category.id} className="flex flex-col justify-between pb-3 p-5 animate-zoom-in md:h-[200px] h-[200px] rounded-[10px] border border-gray-500/[0.3] bg-white dark:bg-gray-300/[0.04]">
                                 <p className="text-green text-[25px] p-2 rounded bg-gray-200/[0.08] w-fit">{category.icon}</p>
