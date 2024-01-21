@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FiDatabase, FiGrid, FiHome, FiList, FiMessageSquare, FiSettings } from "react-icons/fi";
+import { FiGrid, FiHome, FiList, FiMessageSquare, FiSettings } from "react-icons/fi";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { TbCalculator } from "react-icons/tb";
 import AllBooks, { BooksStack } from './BooksData';
@@ -16,16 +16,15 @@ interface Links extends Array<Link>{}
 
 export default function Books() {
     const { hash } = useLocation()
-    const [active, setActive] = useState(hash.replace("#", "").toLowerCase() || "featured") 
+    const [active, setActive] = useState(hash.replace("#", "").toLowerCase() || "academics") 
     const [open, setOpen] = useState(false)
     const [display, setDisplay] = useState("Grid")
     const { christianBooks, faculties }: BooksStack = AllBooks;
 
     const generalLinks: Links = [
-        { id: 0, label: "Featured", icon: <FiDatabase />, link: "#featured" },
+        { id: 0, label: "Academics", icon: <TbCalculator />, link: "#academics" },
         { id: 1, label: "Christian", icon: <FiSettings />, link: "#christian" },
-        { id: 2, label: "Academics", icon: <TbCalculator />, link: "#academics" },
-        { id: 3, label: "Sermons", icon: <FiMessageSquare />, link: "#sermons" }
+        { id: 2, label: "Sermons", icon: <FiMessageSquare />, link: "#sermons" }
     ]
 
     return (

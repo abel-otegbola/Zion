@@ -9,9 +9,9 @@ export default function AcademicBooks({ data, display }: any) {
     return (
         <div className="relative overflow-hidden">
             <h1 className="font-semibold uppercase text-[15px] text-green mb-2">Academic Books</h1>
-            <p className="leading-[130%] text-[12px]">Welcome to the academic books repository. We have both softcopy<span className="text-green">(s)</span> for download as well as hardcopies<span className="text-green">(h)</span>.</p>
+            <p className="leading-[130%] text-[12px]">Welcome to the academic books repository. We have both softcopy for download as well as hardcopies you can borrow.</p>
 
-            <div className="flex items-center gap-2 p-4 my-4 border border-gray-600/[0.2] rounded">
+            <div className="flex items-center gap-2 py-4 my-4 border border-transparent border-y-gray-600/[0.2] rounded">
                 
                 <div>
                     <p className="opacity-[0.7] text-[12px]">Choose faculty:</p>
