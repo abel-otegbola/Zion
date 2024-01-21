@@ -30,15 +30,15 @@ function Topbar() {
             <div className="flex gap-8 items-center">
                 {/* Brand name and logo */}
                 <a href="/" className={`md:ml-0 py-2 flex gap-1`}>
-                    <h1 className="font-bold text-[18px] text-purple">ZION</h1>
+                    <h1 className="font-bold text-[18px] text-green">ZION</h1>
                 </a>
 
                 {/* Menu links for desktop */}
                 <ul className="flex gap-2 items-center md:justify-start justify-between md:p-0 px-[3%] pt-2 border md:border-none border-transparent border-t-gray-300/[0.5] md:static fixed bottom-0 left-0 z-5 bg-white dark:bg-black md:w-auto w-full">
-                    <li><a href="/notes" className={`flex md:gap-2 items-center px-4 py-1 md:text-[14px] text-[9px] md:flex-row flex-col rounded-full ${pathname === "/notes" ? "md:bg-purple/[0.1] text-purple" : "hover:md:bg-purple/[0.1]"}`}><FiList className="text-[16px]"/> Notes</a></li>
-                    <li><a href="/books" className={`flex md:gap-2 items-center px-4 py-1 md:text-[14px] text-[9px] md:flex-row flex-col rounded-full ${pathname === "/books" ? "md:bg-purple/[0.1] text-purple" : "hover:md:bg-purple/[0.1]"}`}><FiBook className="text-[16px]"/> Books</a></li>
-                    <li><a href="/quest" className={`flex md:gap-2 items-center px-4 py-1 md:text-[14px] text-[9px] md:flex-row flex-col rounded-full ${pathname === "/quest" ? "md:bg-[#5938DD]/[0.1] text-purple" : "hover:md:bg-purple/[0.1]"}`}><FaQuestion className="text-[16px]"/> Quest</a></li>
-                    <li><a href="/saved" className={`flex md:gap-2 items-center px-4 py-1 md:text-[14px] text-[9px] md:flex-row flex-col rounded-full ${pathname === "/saved" ? "md:bg-[#5938DD]/[0.1] text-purple" : "hover:md:bg-purple/[0.1]"}`}><FiHeart className="text-[16px]"/> Saved</a></li>
+                    <li><a href="/notes" className={`flex md:gap-2 items-center px-4 py-1 md:text-[14px] text-[9px] md:flex-row flex-col rounded-full ${pathname === "/notes" ? "md:bg-green/[0.1] text-green" : "hover:md:bg-green/[0.1]"}`}><FiList className="text-[16px]"/> Notes</a></li>
+                    <li><a href="/books" className={`flex md:gap-2 items-center px-4 py-1 md:text-[14px] text-[9px] md:flex-row flex-col rounded-full ${pathname === "/books" ? "md:bg-green/[0.1] text-green" : "hover:md:bg-green/[0.1]"}`}><FiBook className="text-[16px]"/> Books</a></li>
+                    <li><a href="/quest" className={`flex md:gap-2 items-center px-4 py-1 md:text-[14px] text-[9px] md:flex-row flex-col rounded-full ${pathname === "/quest" ? "md:bg-green/[0.1] text-green" : "hover:md:bg-green/[0.1]"}`}><FaQuestion className="text-[16px]"/> Quest</a></li>
+                    <li><a href="/saved" className={`flex md:gap-2 items-center px-4 py-1 md:text-[14px] text-[9px] md:flex-row flex-col rounded-full ${pathname === "/saved" ? "md:bg-green/[0.1] text-green" : "hover:md:bg-green/[0.1]"}`}><FiHeart className="text-[16px]"/> Saved</a></li>
                 </ul>
             </div>
 
@@ -49,7 +49,7 @@ function Topbar() {
                  
                 <a
                         href="/settings"
-                        className="flex items-center justify-center w-[30px] h-[30px] py-0 rounded-full bg-slate-200 dark:bg-slate-300/[0.1] focus:outline focus:outline-offset-2 outline-purple/[0.3] hover:text-green"
+                        className="flex items-center justify-center w-[30px] h-[30px] py-0 rounded-full bg-slate-200 dark:bg-slate-300/[0.1] focus:outline focus:outline-offset-2 outline-green/[0.3] hover:text-darkgreen"
                         role="menuitem" 
                     >
                         <FiSettings />
@@ -59,13 +59,13 @@ function Topbar() {
                     user ? 
                     <a
                         href="/dashboard"
-                        className="flex items-center justify-center w-[25px] h-[25px] py-0 rounded-full bg-slate-300/[0.5] outline outline-offset-2 outline-purple/[0.3] hover:text-green"
+                        className="flex items-center justify-center w-[25px] h-[25px] py-0 rounded-full bg-slate-300/[0.5] outline outline-offset-2 outline-green/[0.3] hover:text-darkgreen"
                         role="menuitem" 
                     >
                         { user?.photoURL ? <img src={user?.photoURL} alt="user" className="rounded-full" width={25} height={25} /> : user?.displayName.charAt(0)}
                     </a>
                     :
-                    <a href="/login" className="md:block hidden px-6 py-[4px] bg-purple text-white rounded">Login</a>
+                    <a href="/login" className="md:block hidden px-6 py-[4px] bg-green text-white rounded">Login</a>
                 }
                     
             </div>

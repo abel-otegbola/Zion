@@ -27,7 +27,7 @@ export default function Search() {
 
     return (
         <div className="md:px-[9%] px-[3%] py-[40px] min-h-[80vh]">
-            <h1 className="uppercase font-semibold">Search results for: <span className="text-purple"> {query}</span></h1>
+            <h1 className="uppercase font-semibold">Search results for: <span className="text-green"> {query}</span></h1>
 
             {
                 loading ? 

@@ -38,8 +38,8 @@ export default function Books() {
                         <a href="/" className="text-lg"><FiHome /></a> | <a href="/resources" className="opacity-[0.6]"> Books</a> | <span className="opacity-[0.6]"> {active}</span>
                     </div>
                     <div className="flex">
-                        <button className={`p-2 text-[16px] ${display === "List" ? "bg-purple text-white" : "bg-gray-200/[0.08]"}`} onClick={() => setDisplay("List")}><FiList /></button>
-                        <button className={`p-2 text-[16px] ${display === "Grid" ? "bg-purple text-white" : "bg-gray-200/[0.08]"}`} onClick={() => setDisplay("Grid")}><FiGrid /></button>
+                        <button className={`p-2 text-[16px] ${display === "List" ? "bg-green text-white" : "bg-gray-200/[0.08]"}`} onClick={() => setDisplay("List")}><FiList /></button>
+                        <button className={`p-2 text-[16px] ${display === "Grid" ? "bg-green text-white" : "bg-gray-200/[0.08]"}`} onClick={() => setDisplay("Grid")}><FiGrid /></button>
                     </div>
                 </div>
             </div>
@@ -49,7 +49,7 @@ export default function Books() {
                     {
                         generalLinks.map(link => {
                                 return (
-                                <a key={link.id} href={link.link} onClick={() => {setActive(link.label.toLowerCase()); setOpen(false) }} className={`flex items-center justify-between p-1 my-[2px] px-4 hover:bg-purple hover:text-white rounded ${active.toLowerCase() === link.label.toLowerCase() ? "bg-purple text-white" : ""}`}>
+                                <a key={link.id} href={link.link} onClick={() => {setActive(link.label.toLowerCase()); setOpen(false) }} className={`flex items-center justify-between p-1 my-[2px] px-4 hover:bg-green hover:text-white rounded ${active.toLowerCase() === link.label.toLowerCase() ? "bg-green text-white" : ""}`}>
                                     <span className="w-[30px] text-lg">{link.icon}</span>
                                     <span className="flex-1 p-2 break-normal">{link.label}</span>
                                 </a>

@@ -53,7 +53,7 @@ function Chat({ project_id }: any) {
                                 <p>{chat.username}</p>
                                 <p>{chat.date}</p>
                             </div>
-                            <p className={`p-3 ${!user ? "" : user.email === chat.email ? "rounded-l-lg bg-purple text-white" : "rounded-r-lg bg-white dark:bg-gray-200/[0.09]"} w-fit`}>{chat.msg}</p>
+                            <p className={`p-3 ${!user ? "" : user.email === chat.email ? "rounded-l-lg bg-green text-white" : "rounded-r-lg bg-white dark:bg-gray-200/[0.09]"} w-fit`}>{chat.msg}</p>
                         </div>
                     ))
                 

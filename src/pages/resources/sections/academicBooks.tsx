@@ -8,14 +8,14 @@ export default function AcademicBooks({ data, display }: any) {
 
     return (
         <div className="relative overflow-hidden">
-            <h1 className="font-semibold uppercase text-[15px] text-purple mb-2">Academic Books</h1>
-            <p className="leading-[130%] text-[12px]">Welcome to the academic books repository. We have both softcopy<span className="text-purple">(s)</span> for download as well as hardcopies<span className="text-purple">(h)</span>.</p>
+            <h1 className="font-semibold uppercase text-[15px] text-green mb-2">Academic Books</h1>
+            <p className="leading-[130%] text-[12px]">Welcome to the academic books repository. We have both softcopy<span className="text-green">(s)</span> for download as well as hardcopies<span className="text-green">(h)</span>.</p>
 
             <div className="flex items-center gap-2 p-4 my-4 border border-gray-600/[0.2] rounded">
                 
                 <div>
                     <p className="opacity-[0.7] text-[12px]">Choose faculty:</p>
-                    <select className="p-[11px] md:px-4 px-2 rounded bg-transparent border border-gray-100 dark:border-gray-100/[0.09] px-3 focus:outline outline-purple/[0.3] outline-offset-1" onChange={(e) => setFaculty(e.target.value)}>
+                    <select className="p-[11px] md:px-4 px-2 rounded bg-transparent border border-gray-100 dark:border-gray-100/[0.09] px-3 focus:outline outline-green/[0.3] outline-offset-1" onChange={(e) => setFaculty(e.target.value)}>
                         <option className="bg-black text-white">Technology</option>
                         <option className="bg-black text-white">Science</option>
                         <option className="bg-black text-white">Clinical Sciences</option>

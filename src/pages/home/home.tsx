@@ -25,10 +25,10 @@ function Home()  {
 
     return (
         <main>
-            <header className="md:px-[9%] p-[3%] py-[60px] relative bg-gradient-to-br from-white dark:from-black via-white dark:via-black to-purple/[0.05]">
+            <header className="md:px-[9%] p-[3%] py-[60px] relative bg-gradient-to-br from-white dark:from-black via-white dark:via-black to-green/[0.05]">
             
                 <div className="m-auto flex flex-col gap-4 md:items-center md:text-center md:w-[45%] w-full">
-                    <p className="text-purple p-1 px-4 rounded-full w-fit rounded bg-purple/[0.1] animate-zoom-in">All resources in one place</p>
+                    <p className="text-green p-1 px-4 rounded-full w-fit rounded bg-green/[0.1] animate-zoom-in">All resources in one place</p>
                     <Searchbar />
                     
                 </div>
@@ -42,7 +42,7 @@ function Home()  {
                             {id: 0, text: "Christian Books", to: "books#Christian", icon: <FiBook />, subText: "10 new items"},
                         ].map((category) => (
                             <a href={category.to} key={category.id} className="flex flex-col justify-between pb-3 p-5 animate-zoom-in md:h-[200px] h-[200px] rounded-[10px] border border-gray-500/[0.3] bg-white dark:bg-gray-300/[0.04]">
-                                <p className="text-purple text-[25px] p-2 rounded bg-gray-200/[0.08] w-fit">{category.icon}</p>
+                                <p className="text-green text-[25px] p-2 rounded bg-gray-200/[0.08] w-fit">{category.icon}</p>
                                 <div>
                                     <p className="uppercase font-semibold">{category.text}</p>
                                     <p className="opacity-[0.6]">{category.subText}</p>
@@ -55,7 +55,7 @@ function Home()  {
 
             <section className="grid md:grid-cols-2 gap-4 py-[70px] dark:bg-gray-100/[0.02] bg-gray-300/[0.2] md:px-[9%] px-[3%]">
                     <a href={"/topics"} className="flex flex-col justify-between pb-3 p-5 animate-zoom-in md:h-[200px] h-[200px] rounded-[10px] border border-gray-500/[0.3] bg-white dark:bg-gray-300/[0.04]">
-                        <p className="text-purple p-1 px-4 rounded-full w-fit rounded bg-purple/[0.1] animate-zoom-in">Topic of the week</p>
+                        <p className="text-green p-1 px-4 rounded-full w-fit rounded bg-green/[0.1] animate-zoom-in">Topic of the week</p>
                         <div>
                             <p className="uppercase font-semibold">Service to God</p>
                             <p className="opacity-[0.6]">Text: 1 corinthians 6:20</p>
@@ -63,7 +63,7 @@ function Home()  {
                     </a>
                     
                     <a href={"/topics"} className="flex flex-col justify-between pb-3 p-5 animate-zoom-in md:h-[200px] h-[200px] rounded-[10px] border border-gray-500/[0.3] bg-white dark:bg-gray-300/[0.04]">
-                        <p className="text-purple p-1 px-4 rounded-full w-fit rounded bg-purple/[0.1] animate-zoom-in">Announcement</p>
+                        <p className="text-green p-1 px-4 rounded-full w-fit rounded bg-green/[0.1] animate-zoom-in">Announcement</p>
                         <div>
                             <p className="uppercase font-semibold">Crash class</p>
                             <p className="opacity-[0.6]">CHM 101 - Tues 23rd Jan 2024</p>

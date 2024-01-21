@@ -48,7 +48,7 @@ function LeftBar() {
                     <a key={link.id} href={link.link} onClick={() => link.label === "Logout" ? signOut(auth) : ""}  className={`flex items-center justify-between w-full p-1 my-[2px] px-4 rounded hover:bg-[#5938DD] hover:text-white ${pathname === link.link ? "bg-[#5938DD] text-white" : ""}`}>
                         <span className="w-[30px] text-[18px]">{link.icon}</span>
                         <span className="flex-1 p-2 break-normal">{link.label}</span>
-                        <span className="p-[0px] px-2 rounded text-[10px] bg-purple/[0.1]">{link.msg}</span>
+                        <span className="p-[0px] px-2 rounded text-[10px] bg-green/[0.1]">{link.msg}</span>
                     </a>
                 )})
             }

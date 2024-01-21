@@ -29,7 +29,7 @@ function DashboardHome() {
         <div className="py-[40px] w-full">
             <h1 className="uppercase font-semibold">Welcome: {user?.displayName || user?.email}</h1>
 
-            <h2 className="mt-8 border border-transparent border-b-gray-200 dark:border-b-gray-100/[0.1] text-[14px] text-purple">MY PROJECTS</h2>
+            <h2 className="mt-8 border border-transparent border-b-gray-200 dark:border-b-gray-100/[0.1] text-[14px] text-green">MY PROJECTS</h2>
             <div className="w-full grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 gap-4 py-2 my-4 scrollbar">
                 {
                     !loading ?
@@ -50,7 +50,7 @@ function DashboardHome() {
                     </div>
                 </div>
             </div>
-            <h2 className="mt-8 border border-transparent border-b-gray-200 dark:border-b-gray-100/[0.1] text-[14px] text-purple">FEATURED</h2>
+            <h2 className="mt-8 border border-transparent border-b-gray-200 dark:border-b-gray-100/[0.1] text-[14px] text-green">FEATURED</h2>
 
             <div className="w-full min-h-[250px] grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 gap-4 py-2 my-4 overflow-x-auto scrollbar">
                 {

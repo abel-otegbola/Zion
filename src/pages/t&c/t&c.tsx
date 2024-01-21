@@ -5,7 +5,7 @@ function TermsConditions() {
             <div className="md:sticky flex flex-col items-center top-[65px] h-screen md:w-[250px] p-4">
                 {
                     sections.map((section: string, i:number) => (
-                        <a key={i} href={`#${section}`} className="block p-[12px] w-full hover:text-green">{section}</a>
+                        <a key={i} href={`#${section}`} className="block p-[12px] w-full hover:text-darkgreen">{section}</a>
                     ))
                 }
             </div>

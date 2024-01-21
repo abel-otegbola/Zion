@@ -8,8 +8,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        'purple': '#128C7E',
-        'green': '#25D366',
+        'green': '#128C7E',
+        'darkgreen': '#25D366',
         'black': '#101610',
       },
       animation: {

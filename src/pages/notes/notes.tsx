@@ -11,14 +11,14 @@ export default function Notes() {
         <div className="md:px-[9%] px-[3%] min-h-[90vh] relative overflow-hidden">
             <div className="flex items-center justify-between py-[40px]">
                 <div>
-                    <a href="#new" onClick={() => {setSelected({id: 0, heading: "", text: ""}); setOpen(true)}} className="flex items-center gap-2 p-2 px-6 rounded bg-purple/[0.1] border border-purple"><span>Create new</span> <FiPlus /> </a>
+                    <a href="#new" onClick={() => {setSelected({id: 0, heading: "", text: ""}); setOpen(true)}} className="flex items-center gap-2 p-2 px-6 rounded bg-green/[0.1] border border-green"><span>Create new</span> <FiPlus /> </a>
                 </div>
                 <div className="flex">
-                    <button className={`p-2 text-[16px] ${display === "List" ? "bg-purple text-white" : "bg-gray-200/[0.08]"}`} onClick={() => setDisplay("List")}><FiList /></button>
-                    <button className={`p-2 text-[16px] ${display === "Grid" ? "bg-purple text-white" : "bg-gray-200/[0.08]"}`} onClick={() => setDisplay("Grid")}><FiGrid /></button>
+                    <button className={`p-2 text-[16px] ${display === "List" ? "bg-green text-white" : "bg-gray-200/[0.08]"}`} onClick={() => setDisplay("List")}><FiList /></button>
+                    <button className={`p-2 text-[16px] ${display === "Grid" ? "bg-green text-white" : "bg-gray-200/[0.08]"}`} onClick={() => setDisplay("Grid")}><FiGrid /></button>
                 </div>
             </div>
-            <h1 className="pt-3 text-purple border border-transparent border-b-gray-500/[0.1] font-semibold md:leading-[45px] leading-[40px] animate-zoom-in">Pinned</h1>
+            <h1 className="pt-3 text-green border border-transparent border-b-gray-500/[0.1] font-semibold md:leading-[45px] leading-[40px] animate-zoom-in">Pinned</h1>
 
            
             <div className={`min-h-[160px] grid gap-4 py-4 ${display === "List" ? "" : "md:grid-cols-4 grid-cols-2"}`}>
@@ -35,7 +35,7 @@ export default function Notes() {
             }
             </div>
 
-            <h1 className="pt-3 text-purple border border-transparent border-b-gray-500/[0.1] font-semibold md:leading-[45px] leading-[40px] animate-zoom-in">Others</h1>
+            <h1 className="pt-3 text-green border border-transparent border-b-gray-500/[0.1] font-semibold md:leading-[45px] leading-[40px] animate-zoom-in">Others</h1>
             <div className={`min-h-[160px] grid gap-4 py-4 ${display === "List" ? "" : "md:grid-cols-4 grid-cols-2"}`}>
             {
                 [
@@ -55,7 +55,7 @@ export default function Notes() {
 
             <div className={`absolute top-0 left-0 md:px-[5%] w-full h-full bg-white dark:bg-black transition-all duration-500 ${open ? "left-0" : "left-[110%]"}`}>
                 <div className="flex justify-between items-center p-[5%] md:py-4">
-                    <button onClick={() => setOpen(false)} ><FaChevronLeft className="p-2 text-[30px] rounded bg-purple/[0.1]" /></button>
+                    <button onClick={() => setOpen(false)} ><FaChevronLeft className="p-2 text-[30px] rounded bg-green/[0.1]" /></button>
                 </div>
                 <div className="md:px-[9%] px-[3%] md:py-[60px] py-[30px] min-h-[90vh]">
                     <textarea className="w-full bg-transparent outline-none px-2 uppercase border border-transparent border-b-gray-500/[0.2] font-semibold leading-[130%] mb-2 overflow-hidden" defaultValue={selected.heading} placeholder="Title"></textarea>

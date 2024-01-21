@@ -100,20 +100,20 @@ export default function EditProject() {
                     <div className="py-6 border border-transparent border-y-gray-100 dark:border-y-gray-100/[0.06]">
                         <div className="flex flex-col gap-2">
                             <p className="md:w-[30%] md:mb-0 mb-2">Title: </p>
-                            <input className="p-[10px] rounded border border-gray-500/[0.5] bg-transparent w-full focus:outline outline-purple outline-offset-1" defaultValue={project.title} onChange={(e) => setTitle(e.target.value)} type="text" placeholder="Add a title" />
+                            <input className="p-[10px] rounded border border-gray-500/[0.5] bg-transparent w-full focus:outline outline-green outline-offset-1" defaultValue={project.title} onChange={(e) => setTitle(e.target.value)} type="text" placeholder="Add a title" />
                         </div>
                     </div>
                     <div className="py-6 border border-transparent border-y-gray-100 dark:border-y-gray-100/[0.06]">
                         <div className="flex flex-col gap-2">
                             <p className="md:w-[30%] md:mb-0 mb-2">Description: </p>
-                            <input className="p-[10px] rounded border border-gray-500/[0.5] bg-transparent w-full focus:outline outline-purple outline-offset-1" defaultValue={project.description} onChange={(e) => setDescription(e.target.value)} type="text" placeholder="Add a description"/>
+                            <input className="p-[10px] rounded border border-gray-500/[0.5] bg-transparent w-full focus:outline outline-green outline-offset-1" defaultValue={project.description} onChange={(e) => setDescription(e.target.value)} type="text" placeholder="Add a description"/>
                         </div>
                     </div>
                     
                     <div className="py-6 border border-transparent border-y-gray-100 dark:border-y-gray-100/[0.06]">
                         <div className="flex flex-col gap-2">
                             <p className="md:w-[30%] md:mb-0 mb-2">Category: </p>
-                            <input className="p-[10px] rounded border border-gray-500/[0.5] bg-transparent w-full focus:outline outline-purple outline-offset-1" defaultValue={project.category} onChange={(e) => setCategory(e.target.value)} type="text" placeholder="Add a category"/>
+                            <input className="p-[10px] rounded border border-gray-500/[0.5] bg-transparent w-full focus:outline outline-green outline-offset-1" defaultValue={project.category} onChange={(e) => setCategory(e.target.value)} type="text" placeholder="Add a category"/>
                         </div>
                     </div>
                     <div className="py-6 border border-transparent border-y-gray-100 dark:border-y-gray-100/[0.06]">
@@ -121,8 +121,8 @@ export default function EditProject() {
                             <p className="md:w-[30%] md:mb-0 mb-2">Equipments: </p>
                             <div className=" w-full border border-gray-500/[0.5] rounded p-1 pr-2 ">
                                 <div className="flex items-center gap-2">
-                                    <input className="p-1 px-2 rounded-[1px] bg-transparent border-none flex-1 focus:outline outline-purple outline-offset-1" value={equipment} onChange={(e) => setEquipment(e.target.value)} type="text" placeholder="Input an equipment"/>
-                                    <button className="text-[10px] rounded p-[6px] px-8 rounde bg-purple text-white" onClick={() => addEquipment()}>
+                                    <input className="p-1 px-2 rounded-[1px] bg-transparent border-none flex-1 focus:outline outline-green outline-offset-1" value={equipment} onChange={(e) => setEquipment(e.target.value)} type="text" placeholder="Input an equipment"/>
+                                    <button className="text-[10px] rounded p-[6px] px-8 rounde bg-green text-white" onClick={() => addEquipment()}>
                                     Add
                                     </button>
                                 </div>
@@ -151,7 +151,7 @@ export default function EditProject() {
                         <div className="md:flex">
                             <p className="md:w-[30%] md:mb-0 py-2">Estimation: </p>
                             <div className="flex items-center w-full border border-gray-500/[0.5] rounded p-1 pr-2 ">
-                                <textarea className="p-[10px] rounded bg-transparent min-h-[200px] border-none flex-1 focus:outline outline-purple outline-offset-1" defaultValue={project.estimation} onChange={(e) => setEstimation(e.target.value)} placeholder="Add an estimatated amount for the project"></textarea>
+                                <textarea className="p-[10px] rounded bg-transparent min-h-[200px] border-none flex-1 focus:outline outline-green outline-offset-1" defaultValue={project.estimation} onChange={(e) => setEstimation(e.target.value)} placeholder="Add an estimatated amount for the project"></textarea>
                             </div>
                         </div>
                     </div>
@@ -176,18 +176,18 @@ export default function EditProject() {
                     <div className="py-6 border border-transparent border-y-gray-100 dark:border-y-gray-100/[0.06]">
                         <div className="md:flex">
                             <p className="md:w-[23%] md:mb-0 py-2">Video: </p>
-                            <input className="p-[10px] w-full rounded bg-transparent border border-gray-500/[0.4] flex-1 focus:outline outline-purple outline-offset-1" defaultValue={project.video} onChange={(e) => setVideo(e.target.value)} placeholder="Enter video link"/>                       
+                            <input className="p-[10px] w-full rounded bg-transparent border border-gray-500/[0.4] flex-1 focus:outline outline-green outline-offset-1" defaultValue={project.video} onChange={(e) => setVideo(e.target.value)} placeholder="Enter video link"/>                       
                         </div>
                     </div>
                     <div className="py-6 border border-transparent border-y-gray-100 dark:border-y-gray-100/[0.06]">
                         <div className="md:flex">
                             <p className="md:w-[23%] md:mb-0 py-2">Other Links: </p>
-                            <textarea className="p-[10px] rounded bg-transparent min-h-[200px] w-full border border-gray-500/[0.4] flex-1 focus:outline outline-purple outline-offset-1" defaultValue={project.links} onChange={(e) => setLinks(e.target.value)}></textarea>
+                            <textarea className="p-[10px] rounded bg-transparent min-h-[200px] w-full border border-gray-500/[0.4] flex-1 focus:outline outline-green outline-offset-1" defaultValue={project.links} onChange={(e) => setLinks(e.target.value)}></textarea>
                         </div>
                     </div>
 
                     <div className="py-8">
-                        <button onClick={() => submitUpdatedProject()} className="p-2 px-4 rounded bg-purple text-white">{!loading ? "Update project" : <FaSpinner className="animate-spin text-[18px]" />}</button>
+                        <button onClick={() => submitUpdatedProject()} className="p-2 px-4 rounded bg-green text-white">{!loading ? "Update project" : <FaSpinner className="animate-spin text-[18px]" />}</button>
                     </div>
 
                 </div>

@@ -7,8 +7,8 @@ export default function ChristianBooks({ christianBooks, display }: any) {
 
     return (
         <div className="relative overflow-hidden">
-            <h1 className="font-semibold uppercase text-[15px] text-purple mb-2">Christian Books</h1>
-            <p className="leading-[130%] text-[12px]">Welcome to the christian books repository. We have both softcopy<span className="text-purple">(s)</span> for download as well as hardcopies<span className="text-purple">(h)</span>.</p>
+            <h1 className="font-semibold uppercase text-[15px] text-green mb-2">Christian Books</h1>
+            <p className="leading-[130%] text-[12px]">Welcome to the christian books repository. We have both softcopy<span className="text-green">(s)</span> for download as well as hardcopies<span className="text-green">(h)</span>.</p>
 
             <div className={`grid gap-4 my-8 ${display === "List" ? "" : "lg:grid-cols-3 grid-cols-2 "}`}>
                 {
@@ -22,12 +22,12 @@ export default function ChristianBooks({ christianBooks, display }: any) {
                             <div className="flex items-center gap-2">
                                 { 
                                     book.type.indexOf("s") !== -1 ?
-                                    <button className="p-[1px] md:px-4 rounded text-[10px] bg-purple/[0.1] border border-gray-100/[0.09] px-3 bg-purple">Softcopy</button>
+                                    <button className="p-[1px] md:px-4 rounded text-[10px] bg-green/[0.1] border border-gray-100/[0.09] px-3 bg-green">Softcopy</button>
                                     : ""
                                 }
                                 {
                                     book.type.indexOf("h") !== -1 ?
-                                    <button className="p-[1px] md:px-4 rounded text-[10px] bg-purple/[0.1] border border-gray-100/[0.09] px-3 bg-purple">Hardcopy</button>
+                                    <button className="p-[1px] md:px-4 rounded text-[10px] bg-green/[0.1] border border-gray-100/[0.09] px-3 bg-green">Hardcopy</button>
                                     : ""
                                 }
                             </div>

@@ -84,7 +84,7 @@ function Project() {
                     {
                         generalLinks.map(link => {
                                 return (
-                                <a key={link.id} href={link.link} onClick={() => {setActive(link.label); setOpen(false) }} className={`flex items-center justify-between w-full p-1 my-[1px] px-4 hover:bg-purple hover:text-white rounded ${active === link.label ? "bg-purple text-white" : ""}`}>
+                                <a key={link.id} href={link.link} onClick={() => {setActive(link.label); setOpen(false) }} className={`flex items-center justify-between w-full p-1 my-[1px] px-4 hover:bg-green hover:text-white rounded ${active === link.label ? "bg-green text-white" : ""}`}>
                                     <span className="w-[30px] text-lg">{link.icon}</span>
                                     <span className="flex-1 p-2 break-normal">{link.label}</span>
                                 </a>
@@ -100,7 +100,7 @@ function Project() {
                     <div className="border border-transparent border-b-gray-200 dark:border-b-gray-100/[0.04]">
                         <h1 className="md:text-4xl text-xl font-bold py-2">{project.title}</h1>
                         <div className="flex items-center gap-2">
-                            <img src={project.user.photoURL} alt={project.user.displayName} className="w-[25px] h-[25px] rounded-full outline outline-offset-1 outline-purple/[0.3]" />
+                            <img src={project.user.photoURL} alt={project.user.displayName} className="w-[25px] h-[25px] rounded-full outline outline-offset-1 outline-green/[0.3]" />
                             <p className="opacity-[0.7]">{project.user.displayName}</p>
                         </div>
                         <div className="flex items-center gap-4">
