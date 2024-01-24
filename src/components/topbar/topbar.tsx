@@ -1,9 +1,10 @@
 import Searchbar from "../searchbar/searchbar";
-import { FiBook, FiHeart, FiList, FiSettings } from "react-icons/fi";
+import { FiBook, FiList, FiSettings } from "react-icons/fi";
 import { useContext, useEffect, useRef, useState } from "react";
 import { AuthContext } from "../../customHooks/useAuth";
 import { useLocation } from "react-router-dom";
 import { FaQuestion } from "react-icons/fa";
+import { TbHeading } from "react-icons/tb";
 
 
 function Topbar() {
@@ -38,13 +39,13 @@ function Topbar() {
                     <li><a href="/notes" className={`flex md:gap-2 items-center px-4 py-1 md:text-[14px] text-[9px] md:flex-row flex-col rounded-full ${pathname === "/notes" ? "md:bg-green/[0.1] text-green" : "hover:md:bg-green/[0.1]"}`}><FiList className="text-[16px]"/> Notes</a></li>
                     <li><a href="/books" className={`flex md:gap-2 items-center px-4 py-1 md:text-[14px] text-[9px] md:flex-row flex-col rounded-full ${pathname === "/books" ? "md:bg-green/[0.1] text-green" : "hover:md:bg-green/[0.1]"}`}><FiBook className="text-[16px]"/> Books</a></li>
                     <li><a href="/quest" className={`flex md:gap-2 items-center px-4 py-1 md:text-[14px] text-[9px] md:flex-row flex-col rounded-full ${pathname === "/quest" ? "md:bg-green/[0.1] text-green" : "hover:md:bg-green/[0.1]"}`}><FaQuestion className="text-[16px]"/> Quest</a></li>
-                    <li><a href="/saved" className={`flex md:gap-2 items-center px-4 py-1 md:text-[14px] text-[9px] md:flex-row flex-col rounded-full ${pathname === "/saved" ? "md:bg-green/[0.1] text-green" : "hover:md:bg-green/[0.1]"}`}><FiHeart className="text-[16px]"/> Saved</a></li>
+                    <li><a href="/topics" className={`flex md:gap-2 items-center px-4 py-1 md:text-[14px] text-[9px] md:flex-row flex-col rounded-full ${pathname === "/topics" ? "md:bg-green/[0.1] text-green" : "hover:md:bg-green/[0.1]"}`}><TbHeading className="text-[16px]"/> Topics</a></li>
                 </ul>
             </div>
 
             <div ref={menuRef} className="flex items-center gap-6 relative">
                 <div className="lg:w-[300px] flex-1 sm:block hidden">
-                    <Searchbar />
+                    <Searchbar options={[ "Books", "Topics", "Questions" ]}/>
                 </div>
                  
                 <a

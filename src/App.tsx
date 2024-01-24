@@ -8,15 +8,14 @@ import Footer from './components/footer/footer'
 import Login from './pages/login/login'
 import FinishSignup from './pages/finishSignup/finishSignup'
 import { AuthProvider } from './customHooks/useAuth'
-import Project from './pages/project/project'
 import TermsConditions from './pages/t&c/t&c'
 import PrivacyPolicy from './pages/privacypolicy/privacypolicy'
-import Explore from './pages/explore/explore'
 import Search from './pages/search/search'
 import ErrorPage from './pages/404/404'
 import Notes from './pages/notes/notes'
 import Books from './pages/resources/books'
 import Quest from './pages/quest/quest'
+import Topics from './pages/topics/topics'
 
 function App() {
   useEffect(() => {
@@ -47,9 +46,8 @@ function App() {
             <Route path='/notes' element={<Notes />} />
             <Route path='/quest' element={<Quest />} />
             <Route path='/books' element={<Books />} />
+            <Route path='/topics' element={<Topics />} />
             <Route path='/login' element={<Login />} />
-            <Route path='/project' element={<Project />} />
-            <Route path='/explore' element={<Explore />} />
             <Route path='/search' element={<Search />} />
             <Route path='/terms&Conditions' element={<TermsConditions />} />
             <Route path='/privacypolicy' element={<PrivacyPolicy />} />
