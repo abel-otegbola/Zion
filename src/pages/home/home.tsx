@@ -25,10 +25,11 @@ function Home()  {
 
     return (
         <main>
-            <header className="md:px-[9%] p-[3%] py-[60px] relative bg-gradient-to-br from-white dark:from-black via-white dark:via-black to-green/[0.05]">
+            <header className="md:px-[9%] p-[3%] py-[60px] relative bg-slate-100 dark:bg-black">
             
                 <div className="m-auto flex flex-col gap-4 md:items-center md:text-center md:w-[45%] w-full">
                     <p className="text-green p-1 px-4 rounded-full w-fit rounded bg-green/[0.1] animate-zoom-in">All resources in one place</p>
+                    <h1 className="md:text-[48px] text-[36px] text-green my-4 font-bold uppercase">CCCSOAU Library</h1>
                     <Searchbar options={[ "Books", "Topics", "Questions" ]}/>
                     
                 </div>

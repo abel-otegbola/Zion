@@ -38,7 +38,7 @@ function App() {
   return (
     <BrowserRouter>
       <AuthProvider>
-        <div className={`bg-white dark:bg-black w-full min-h-full text-black dark:text-white/[0.8] leading-[30px]`} style={{ fontSize: font }}>
+        <div className={`bg-white dark:bg-black w-full min-h-full text-black dark:text-white leading-[30px]`} style={{ fontSize: font }}>
           <Topbar />
           <Routes>
             <Route path='/' element={<Home />} />

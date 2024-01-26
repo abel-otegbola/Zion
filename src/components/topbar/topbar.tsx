@@ -31,7 +31,7 @@ function Topbar() {
             <div className="flex gap-8 items-center">
                 {/* Brand name and logo */}
                 <a href="/" className={`md:ml-0 py-2 flex gap-1`}>
-                    <h1 className="font-bold text-[18px] text-green">ZION</h1>
+                    <h1 className="font-bold text-[18px] text-green">CAOL.</h1>
                 </a>
 
                 {/* Menu links for desktop */}

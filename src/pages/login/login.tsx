@@ -68,7 +68,7 @@ function Login() {
 
                     <div className="grid grid-cols-1 gap-4 my-8">
                         {
-                            ['Google'].map((social,i )=> {
+                            ['Google', "Facebook"].map((social,i )=> {
                                 return (
                                     <button key={i} onClick={() => socialSignIn(social)} className="flex items-center justify-center gap-2 p-[12px] bg-gray-200 dark:bg-gray-100/[0.09] w-full rounded hover:border-darkgreen hover:dark:border-darkgreen hover:text-darkgreen">
                                         { social === "Google" ? <FcGoogle className="text-xl"/> : social === "Facebook" ? <FaFacebook /> : social === "Twitter" ? <FaTwitter /> : social === "Linkedin" ? <FaLinkedin /> : "" }
@@ -101,7 +101,7 @@ function Login() {
                         </div> : "" 
                     }
 
-                    <label htmlFor="email" className="block p-2 pt-4">Signin with Email:</label>
+                    <label htmlFor="email" className="block p-2 pt-4">Email Address:</label>
                     <input className="p-[12px] bg-transparent w-full outline-none border border-gray-400/[0.3] focus:border-darkgreen/[0.5] rounded" id="email" name="email" type="email" placeholder="Enter your email" onChange={(e) => setEmail(e.target.value)} />
                     
                     <button className="w-full p-[6px] rounded bg-green hover:bg-fuchsia-800 text-white mt-8" onClick={() => signup()}>Login</button>
