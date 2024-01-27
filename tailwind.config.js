@@ -10,7 +10,7 @@ export default {
       colors: {
         'green': '#128C7E',
         'darkgreen': '#25D366',
-        'black': '#0A0C0A',
+        'black': '#101616',
       },
       animation: {
         'zoom-in': 'zoom 0.7s ease-in-out'

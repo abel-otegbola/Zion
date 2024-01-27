@@ -3,6 +3,7 @@
 // import { onValue, ref } from "firebase/database";
 import { FiBook, FiDatabase, FiFile, FiList } from "react-icons/fi";
 import Searchbar from "../../components/searchbar/searchbar";
+import bg from "../../assets/bg.png"
 
 
 function Home()  {
@@ -25,7 +26,7 @@ function Home()  {
 
     return (
         <main>
-            <header className="md:px-[9%] p-[3%] py-[60px] relative bg-slate-100 dark:bg-black">
+            <header style={{ backgroundImage: `url('${bg}')` }} className="md:px-[9%] p-[3%] py-[60px] relative bg-cover bg-center ">
             
                 <div className="m-auto flex flex-col gap-4 md:items-center md:text-center md:w-[45%] w-full">
                     <p className="text-green p-1 px-4 rounded-full w-fit rounded bg-green/[0.1] animate-zoom-in">All resources in one place</p>
