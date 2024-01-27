@@ -31,10 +31,6 @@ function App() {
 
   let font = fontSize ? JSON.parse(fontSize.replace(/&quot;/g, '"')) : "14px"
 
-  useEffect(() => {
-    console.log(font)
-  }, [])
-
   return (
     <BrowserRouter>
       <AuthProvider>

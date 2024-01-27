@@ -31,7 +31,7 @@ export default function Books() {
     return (
         <div className="">
 
-            <div className="py-4 md:px-[9%] px-[3%] border border-transparent border-b-gray-200 dark:border-b-slate-100/[0.09] ">
+            <div className="sticky top-0 left-0 bg-white dark:bg-black py-4 md:px-[9%] px-[3%] border border-transparent border-b-gray-200 dark:border-b-slate-100/[0.09] z-20">
                 <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2 text-[12px] ">
                         <button className="md:hidden p-2 mr-2 text-lg" onClick={() => setOpen(!open)}>{open ? <FaTimes /> : <FaBars />}</button>

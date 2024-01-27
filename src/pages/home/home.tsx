@@ -26,7 +26,7 @@ function Home()  {
 
     return (
         <main>
-            <header style={{ backgroundImage: `url('${bg}')` }} className="md:px-[9%] p-[3%] py-[60px] relative bg-cover bg-center ">
+            <header style={{ backgroundImage: `url('${bg}')` }} className="md:px-[9%] p-[3%] py-[60px] relative bg-cover bg-center text-white">
             
                 <div className="m-auto flex flex-col gap-4 md:items-center md:text-center md:w-[45%] w-full">
                     <p className="text-green p-1 px-4 rounded-full w-fit rounded bg-green/[0.1] animate-zoom-in">All resources in one place</p>
@@ -43,7 +43,7 @@ function Home()  {
                             {id: 0, text: "Academic Books", to: "books#academics", icon: <FiDatabase />, subText: "200+ items"},
                             {id: 0, text: "Christian Books", to: "books#christian", icon: <FiBook />, subText: "100+ items"},
                         ].map((category) => (
-                            <a href={category.to} key={category.id} className="flex flex-col justify-between pb-3 p-5 animate-zoom-in md:h-[200px] h-[200px] rounded-[10px] border border-gray-500/[0.3] bg-white dark:bg-gray-300/[0.04]">
+                            <a href={category.to} key={category.id} className="flex flex-col justify-between pb-3 p-5 animate-zoom-in md:h-[200px] h-[200px] rounded-[10px] border border-gray-500/[0.3] bg-gray-300/[0.04]">
                                 <p className="text-green text-[25px] p-2 rounded bg-gray-200/[0.08] w-fit">{category.icon}</p>
                                 <div>
                                     <p className="uppercase font-semibold">{category.text}</p>

@@ -1,10 +1,10 @@
 import Searchbar from "../searchbar/searchbar";
-import { FiBook, FiList, FiSettings } from "react-icons/fi";
+import { FiBook, FiHome, FiSettings } from "react-icons/fi";
 import { useContext, useEffect, useRef, useState } from "react";
 import { AuthContext } from "../../customHooks/useAuth";
 import { useLocation } from "react-router-dom";
 import { FaQuestion } from "react-icons/fa";
-import { TbHeading } from "react-icons/tb";
+import { TbTextCaption } from "react-icons/tb";
 
 
 function Topbar() {
@@ -26,7 +26,7 @@ function Topbar() {
     })
 
     return (
-        <div className="flex items-center justify-between sticky top-0 left-0 w-full bg-white dark:bg-black p-[2px] lg:px-[9%] px-[4%] border border-transparent border-b-gray-200 dark:border-b-gray-100/[0.09] z-20">
+        <div className="flex items-center justify-between w-full bg-white dark:bg-black p-[2px] lg:px-[9%] px-[4%] border border-transparent border-b-gray-200 dark:border-b-gray-100/[0.09] z-20">
 
             <div className="flex gap-8 items-center">
                 {/* Brand name and logo */}
@@ -36,10 +36,10 @@ function Topbar() {
 
                 {/* Menu links for desktop */}
                 <ul className="flex gap-2 items-center md:justify-start justify-between md:p-0 px-[3%] pt-2 border md:border-none border-transparent border-t-gray-300/[0.5] md:static fixed bottom-0 left-0 z-5 bg-white dark:bg-black md:w-auto w-full">
-                    <li><a href="/notes" className={`flex md:gap-2 items-center px-4 py-1 md:text-[14px] text-[9px] md:flex-row flex-col rounded-full ${pathname === "/notes" ? "md:bg-green/[0.1] text-green" : "hover:md:bg-green/[0.1]"}`}><FiList className="text-[16px]"/> Notes</a></li>
+                    <li><a href="/" className={`flex md:gap-2 items-center px-4 py-1 md:text-[14px] text-[9px] md:flex-row flex-col rounded-full ${pathname === "/" ? "md:bg-green/[0.1] text-green" : "hover:md:bg-green/[0.1]"}`}><FiHome className="text-[16px]"/> Home</a></li>
                     <li><a href="/books" className={`flex md:gap-2 items-center px-4 py-1 md:text-[14px] text-[9px] md:flex-row flex-col rounded-full ${pathname === "/books" ? "md:bg-green/[0.1] text-green" : "hover:md:bg-green/[0.1]"}`}><FiBook className="text-[16px]"/> Books</a></li>
                     <li><a href="/quest" className={`flex md:gap-2 items-center px-4 py-1 md:text-[14px] text-[9px] md:flex-row flex-col rounded-full ${pathname === "/quest" ? "md:bg-green/[0.1] text-green" : "hover:md:bg-green/[0.1]"}`}><FaQuestion className="text-[16px]"/> Quest</a></li>
-                    <li><a href="/topics" className={`flex md:gap-2 items-center px-4 py-1 md:text-[14px] text-[9px] md:flex-row flex-col rounded-full ${pathname === "/topics" ? "md:bg-green/[0.1] text-green" : "hover:md:bg-green/[0.1]"}`}><TbHeading className="text-[16px]"/> Topics</a></li>
+                    <li><a href="/topics" className={`flex md:gap-2 items-center px-4 py-1 md:text-[14px] text-[9px] md:flex-row flex-col rounded-full ${pathname === "/topics" ? "md:bg-green/[0.1] text-green" : "hover:md:bg-green/[0.1]"}`}><TbTextCaption className="text-[16px]"/> Topics</a></li>
                 </ul>
             </div>
 

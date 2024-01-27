@@ -18,7 +18,7 @@ function DashboardHome() {
 
     return (
         <>
-            <div className="py-4 md:px-[9%] px-[3%] border border-transparent border-b-gray-200 dark:border-b-slate-100/[0.09] ">
+            <div className="sticky top-0 left-0 p-4 md:px-[9%] px-[3%] bg-white dark:bg-black border border-transparent border-b-gray-200 dark:border-b-slate-100/[0.09] z-20">
                 <div className="flex items-center gap-2 text-[12px] ">
                     <button className="md:hidden p-2 mr-2 text-lg" onClick={() => setOpen(!open)}>{open ? <FaTimes /> : <FaBars />}</button>
                     <a href="/" className="text-lg"><FiHome /></a> | <a href="/dashboard" className="opacity-[0.6]"> Account</a> | <span className="opacity-[0.6]"> {active}</span>
@@ -26,7 +26,7 @@ function DashboardHome() {
             </div>
 
             <div className="w-full md:px-[9%] px-[3%]">
-                <div className={`md:w-[25%] w-[240px] h-screen md:sticky absolute top-[0px] md:pl-0 p-4 left-0 bg-white dark:bg-black border border-transparent border-r-gray-200 dark:border-r-slate-100/[0.09] overflow-hidden z-10 transition-all duration-700 ${open ? "translate-x-[0]": "md:translate-x-[0] translate-x-[-130%]"}`}>  
+                <div className={`md:w-[25%] w-[240px] h-screen sticky top-0 md:pl-0 p-4 left-0 bg-white dark:bg-black border border-transparent border-r-gray-200 dark:border-r-slate-100/[0.09] overflow-hidden z-10 transition-all duration-700 ${open ? "translate-x-[0]": "md:translate-x-[0] translate-x-[-130%]"}`}>  
                     {
                         generalLinks.map(link => {
                                 return (
