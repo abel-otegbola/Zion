@@ -10,7 +10,7 @@ import { AuthContext } from "../../../customHooks/useAuth";
 import ContentEditor from "../../../components/quillEditor/quillEditor";
 
 
-export default function EditProject() {
+export default function EditBook() {
     const [loading, setLoading] = useState(false)
     const [popup, setPopup] = useState({type: "", msg: ""})
     const [title, setTitle] = useState("")

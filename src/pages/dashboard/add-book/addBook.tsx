@@ -8,7 +8,7 @@ import { nanoid } from "nanoid";
 import Popup from "../../../components/popup/popup";
 import ContentEditor from "../../../components/quillEditor/quillEditor";
 
-function Create() {
+function AddBook() {
     const [title, setTitle] = useState("")
     const [category, setCategory] = useState("")
     const [description, setDescription] = useState("")
@@ -211,4 +211,4 @@ function Create() {
     )
 }
 
-export default Create;
+export default AddBook;

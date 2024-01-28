@@ -1,9 +1,11 @@
-import { useContext, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { AuthContext } from "../../../customHooks/useAuth"
 import { Links } from "../../resources/books";
 import { TbBook, TbDashboard, TbUsers } from "react-icons/tb";
 import { FiHome } from "react-icons/fi";
 import { FaBars, FaTimes } from "react-icons/fa";
+import DashboardBooks from "./sections/books";
+import DashboardUsers from "./sections/users";
 
 function DashboardHome() {
     const { user } = useContext(AuthContext);
@@ -12,9 +14,13 @@ function DashboardHome() {
 
     const generalLinks: Links = [
             { id: 0, label: "Dashboard", icon: <TbDashboard />, link: "#dashboard" },
-            { id: 1, label: "Books", icon: <TbBook />, link: "#book" },
+            { id: 1, label: "Books", icon: <TbBook />, link: "#books" },
             { id: 2, label: "Users", icon: <TbUsers />, link: "#users" },
         ]
+    
+        useEffect(() => {
+            console.log(user)
+        }, [])
 
     return (
         <>
@@ -25,8 +31,8 @@ function DashboardHome() {
                 </div>
             </div>
 
-            <div className="w-full md:px-[9%] px-[3%]">
-                <div className={`md:w-[25%] w-[240px] h-screen sticky top-0 md:pl-0 p-4 left-0 bg-white dark:bg-black border border-transparent border-r-gray-200 dark:border-r-slate-100/[0.09] overflow-hidden z-10 transition-all duration-700 ${open ? "translate-x-[0]": "md:translate-x-[0] translate-x-[-130%]"}`}>  
+            <div className="flex w-full md:px-[9%] px-[3%]">
+                <div className={`md:w-[25%] w-[240px] h-screen md:sticky absolute top-0 md:pl-0 p-4 left-0 bg-white dark:bg-black border border-transparent border-r-gray-200 dark:border-r-slate-100/[0.09] overflow-hidden z-10 transition-all duration-700 ${open ? "translate-x-[0]": "md:translate-x-[0] translate-x-[-130%]"}`}>  
                     {
                         generalLinks.map(link => {
                                 return (
@@ -38,16 +44,21 @@ function DashboardHome() {
                         })
                     }
                 </div>
-        
-                <h1 className="uppercase font-semibold">Welcome: {user?.displayName || user?.email}</h1>
-
-                <h2 className="mt-8 border border-transparent border-b-gray-200 dark:border-b-gray-100/[0.1] text-[14px] text-green">MY PROJECTS</h2>
-                <div className="w-full grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 gap-4 py-2 my-4 scrollbar">
-                    
+                
+                <div className="md:p-[3%] md:w-[75%] w-full min-h-[80vh] py-[20px]">
+                    {
+                        active === "books" ? 
+                            <DashboardBooks />
+                        : 
+                        active === "users" ?
+                            <DashboardUsers  />
+                        :
+                            <div className="">
+                                <h1 className="font-semibold uppercase text-[15px] text-green mb-2">Dashboard</h1>
+                                <p className="leading-[130%] text-[12px]">Welcome back {user.displayName}</p>
+                            </div>
+                    }
                 </div>
-                <h2 className="mt-8 border border-transparent border-b-gray-200 dark:border-b-gray-100/[0.1] text-[14px] text-green">FEATURED</h2>
-
-
             </div>
         </>
     )

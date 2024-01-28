@@ -2,8 +2,8 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import DashboardHome from "./dashboardHome/dashboardHome";
 import { useContext } from "react";
 import { AuthContext } from "../../customHooks/useAuth";
-import Create from "./create/create";
-import EditProject from "./edit-project/editProject";
+import AddBook from "./add-book/addBook";
+import EditBook from "./edit-book/editBook";
 
 function Dashboard() {
     const { user } = useContext(AuthContext); 
@@ -16,10 +16,9 @@ function Dashboard() {
         <>
             <div className="">
                 <Routes>
-                    <Route path="/" element={<Navigate to={"/dashboard/home"} />} />
-                    <Route path="/home" element={<DashboardHome />} />
-                    <Route path="/create" element={<Create />} />
-                    <Route path="/edit-project" element={<EditProject />} />
+                    <Route path="/" element={<DashboardHome />} />
+                    <Route path="/add-book" element={<AddBook />} />
+                    <Route path="/edit-book" element={<EditBook />} />
                 </Routes>
             </div>
         </>
